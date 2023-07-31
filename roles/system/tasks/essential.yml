@@ -1,0 +1,16 @@
+---
+- name: Update and upgrade packages 
+  apt:
+    update_cache: yes
+    upgrade: yes
+    autoremove: yes
+
+- name: Update and upgrade apt packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: Install extra packages
+  package:
+    name: "{{ packages }}"
+    state: present
