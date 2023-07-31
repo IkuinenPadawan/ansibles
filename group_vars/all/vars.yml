@@ -1,0 +1,5 @@
+username: ikuinenpadawan
+packages:
+  - vim
+  - htop
+  - tmux
