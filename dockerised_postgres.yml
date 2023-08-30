@@ -1,0 +1,21 @@
+---
+- hosts: docker
+  become: true
+
+  tasks:
+    - name: Ensure latest postgres image is pulled
+      community.docker.docker_image:
+        name: postgres:latest
+        source: pull
+        state: present
+
+    - name: Create db container
+      community.docker.docker_container:
+        name: mydb
+        image: "postgres:latest"
+        state: started
+        volumes:
+          - /var/lib/postgresql/data
+        env:
+          POSTGRES_USER: "myuser"
+          POSTGRES_PASSWORD: "myuser"

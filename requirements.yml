@@ -1,0 +1,4 @@
+# Install community.docker collection from galaxy
+collections:
+  - name: community.docker
+    source: https://galaxy.ansible.com
